@@ -51,8 +51,8 @@ A tool to edit and preview Qt stylesheets
 Stylesheet used: [QtDark](https://github.com/EClaesson/QTDark/blob/master/QTDark.stylesheet)
 
 ## How to use
-Either open a QSS file to edit and preview or start writing one from scratch in the editor
-To make changes visible either press 'Ctrl + Enter' or click on 'Apply', located in the 'View' section of the menu bar
+* Either open a QSS file to edit and preview or start writing one from scratch in the editor
+* To make changes visible either press 'Ctrl + Enter' or click on 'Apply', located in the 'View' section of the menu bar
 
 ## Download:
 #### v1.0.0
