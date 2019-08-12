@@ -4,6 +4,7 @@ from PyQt5.QtCore import Qt, pyqtSlot
 from style import style_sheet
 from style import about_window_stylesheet
 from style import find_window_stylesheet
+import webbrowser
 
 
 cs = False
@@ -94,7 +95,7 @@ class AboutWindow(QtWidgets.QDialog):
         font1 = QtGui.QFont()
         font1.setPointSize(10)
 
-        label_header = QtWidgets.QLabel('<html><b>QSS Editor++ 1.0.0</b</html>', self)
+        label_header = QtWidgets.QLabel('<html><b>QSS Editor++ 1.0.1</b</html>', self)
         label_header.setGeometry(30, 10, 200, 30)
         label_header.setFont(font1)
         label_header.show()
@@ -372,6 +373,9 @@ class MainWindow(QtWidgets.QMainWindow):
         about_qss_action = QtWidgets.QAction('About QSS Editor++', self)
         about_qss_action.triggered.connect(self.about_qss_editor)
 
+        changelog_action = QtWidgets.QAction('View changelog', self)
+        changelog_action.triggered.connect(self.open_changelog)
+
         file_menu.addAction(open_action)
         file_menu.addAction(save_action)
         file_menu.addAction(save_as_action)
@@ -388,6 +392,7 @@ class MainWindow(QtWidgets.QMainWindow):
         view_menu.addAction(preview_action)
         help_menu.addAction(about_qt_action)
         help_menu.addAction(about_qss_action)
+        help_menu.addAction(changelog_action)
 
         self.line_display = QtWidgets.QTextEdit(self)
         self.line_display.setObjectName('line_display')
@@ -908,6 +913,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.label5.setStyleSheet(stylesheet)
         self.label6.setStyleSheet(stylesheet)
 
+    def open_changelog(self):
+        webbrowser.open('https://github.com/niklas-henning/qss-editor/blob/master/changelog.txt')
+
     def isModified(self):
         return self.text_edit.document().isModified()
 
@@ -1168,58 +1176,6 @@ class MainWindow(QtWidgets.QMainWindow):
                         temp_cursor2 = self.text_edit.textCursor()
                         temp_cursor2.insertText(replace_text)
                         self.text_edit.find(find_text, flags)
-
-            cursor.endEditBlock()
-
-        def handle_replace2():
-            find_text = find_win.line_edit_find.text()
-            replace_text = find_win.line_edit_replace.text()
-
-            cursor = self.text_edit.textCursor()
-            cursor.beginEditBlock()
-
-            flags = QtGui.QTextDocument.FindFlags()
-
-            if cs == False and wwo == False:
-                flags = QtGui.QTextDocument.FindFlags()
-
-            elif cs == True and wwo == False:
-                flags = QtGui.QTextDocument.FindFlags() | QtGui.QTextDocument.FindCaseSensitively
-
-            elif cs == False and wwo == True:
-                flags = QtGui.QTextDocument.FindFlags() | QtGui.QTextDocument.FindWholeWords
-
-            elif cs == True and wwo == True:
-                flags = QtGui.QTextDocument.FindFlags() | QtGui.QTextDocument.FindCaseSensitively | QtGui.QTextDocument.FindWholeWords
-
-            if cursor.hasSelection():
-                cursor.insertText(replace_text)
-            else:
-                r = self.text_edit.find(find_text, flags)
-                if r:
-                    temp_cursor = self.text_edit.textCursor()
-                    if temp_cursor.hasSelection():
-                        temp_cursor.insertText(replace_text)
-                else:
-                    flags2 = QtGui.QTextDocument.FindBackward
-
-                    if cs == False and wwo == False:
-                        flags2 = QtGui.QTextDocument.FindBackward
-
-                    elif cs == True and wwo == False:
-                        flags2 = QtGui.QTextDocument.FindBackward | QtGui.QTextDocument.FindCaseSensitively
-
-                    elif cs == False and wwo == True:
-                        flags2 = QtGui.QTextDocument.FindBackward | QtGui.QTextDocument.FindWholeWords
-
-                    elif cs == True and wwo == True:
-                        flags2 = QtGui.QTextDocument.FindBackward | QtGui.QTextDocument.FindCaseSensitively | QtGui.QTextDocument.FindWholeWords
-
-                    if self.text_edit.find(find_text, flags2) > 0:
-                        self.text_edit.moveCursor(QtGui.QTextCursor.Start)
-                        r2 = self.text_edit.find(find_text, flags)
-                        temp_cursor2 = self.text_edit.textCursor()
-                        temp_cursor2.insertText(replace_text)
 
             cursor.endEditBlock()
 
