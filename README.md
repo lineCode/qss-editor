@@ -1,5 +1,5 @@
 ## QSS Editor++
-A tool to edit and preview Qt stylesheets
+A tool to edit and preview Qt style sheets
 
 
 ## Features
@@ -49,7 +49,7 @@ A tool to edit and preview Qt stylesheets
 ![QSS Editor++ 1](https://user-images.githubusercontent.com/52217345/62200731-4c622200-b386-11e9-8f2e-708ef66e26c8.png)
 ![QSS Editor++ 2](https://user-images.githubusercontent.com/52217345/62200784-6865c380-b386-11e9-8605-90c1f96f395d.png)
 
-Stylesheet used in the second screenshot: [QtDark](https://github.com/EClaesson/QTDark/blob/master/QTDark.stylesheet)
+Style sheet used in the second screenshot: [QtDark](https://github.com/EClaesson/QTDark/blob/master/QTDark.stylesheet)
 
 ## How to use
 * Either open a QSS file to edit and preview or start writing one from scratch in the editor
