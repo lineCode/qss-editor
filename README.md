@@ -4,11 +4,12 @@ A tool to edit and preview Qt stylesheets
 
 ## Features
 
-#### Version 1.0.0
+#### Version 1.0.1
 
 * Preview 30+ widgets
 * Various states (enabled, disabled etc.)
 * Find and Replace tool 
+* Syntax Highlighting
 * Cross platform (Windows, Linux, Mac OS)
 
 ## Supported widgets
@@ -48,16 +49,16 @@ A tool to edit and preview Qt stylesheets
 ![QSS Editor++ 1](https://user-images.githubusercontent.com/52217345/62200731-4c622200-b386-11e9-8f2e-708ef66e26c8.png)
 ![QSS Editor++ 2](https://user-images.githubusercontent.com/52217345/62200784-6865c380-b386-11e9-8605-90c1f96f395d.png)
 
-Stylesheet used: [QtDark](https://github.com/EClaesson/QTDark/blob/master/QTDark.stylesheet)
+Stylesheet used in the second screenshot: [QtDark](https://github.com/EClaesson/QTDark/blob/master/QTDark.stylesheet)
 
 ## How to use
 * Either open a QSS file to edit and preview or start writing one from scratch in the editor
 * To make changes visible either press 'Ctrl + Enter' or click on 'Apply', located in the 'View' section of the menu bar
 
 ## Download:
-#### v1.0.0
+#### v1.0.1
 
-[Download QSS Editor++](https://sourceforge.net/projects/qss-editor/)
+[Download QSS Editor++](https://mega.nz/#!DO5WDIDD!1kulxw3cWbWhQjSZ3bN_2BRGwc1KZDYDy7XiDJDq3go)
 
 
 
