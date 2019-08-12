@@ -6,3 +6,6 @@
  
     Download: https://mega.nz/#!DO5WDIDD!1kulxw3cWbWhQjSZ3bN_2BRGwc1KZDYDy7XiDJDq3go
     
+
+7/31/2019
+    First release v1.0.0
