@@ -1,0 +1,8 @@
+8/12/2019
+    Released v1.0.1
+ 
+    Added "View changelog" feature
+    Removed some unnecessary code
+ 
+    Download: https://mega.nz/#!DO5WDIDD!1kulxw3cWbWhQjSZ3bN_2BRGwc1KZDYDy7XiDJDq3go
+    
