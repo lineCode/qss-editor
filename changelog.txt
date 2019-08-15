@@ -1,3 +1,14 @@
+8/15/2019
+    Released v1.0.2
+ 
+    Fixed syntax highlighting bug
+    Fixed "Replace all" bug that led to the program crashing
+    Fixed bug in function that checks if changes were made and whether they have been saved or not
+    Changed icon size and color
+
+    Download: https://mega.nz/#!SLwigQCI!65d1V6aDaMQoJMYEHumgul-etDujMOwB-UFDbOeY0Yo
+
+
 8/12/2019
     Released v1.0.1
  
@@ -9,3 +20,4 @@
 
 7/31/2019
     First release v1.0.0
+    Download: https://mega.nz/#!yf40xYpJ!m7x1W7emxwh9YJqP0C1fDmj678kPfAYJRB2wb5rcOKo
