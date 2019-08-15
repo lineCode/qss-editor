@@ -58,7 +58,7 @@ Style sheet used in the second screenshot: [QtDark](https://github.com/EClaesson
 ## Download:
 #### v1.0.2
 
-[Download QSS Editor++](https://mega.nz/#!SLwigQCI!65d1V6aDaMQoJMYEHumgul-etDujMOwB-UFDbOeY0Yo)
+[Download QSS Editor++](https://mega.nz/#!TKAQ0CBC!Uvo1_TH_zUAUAKSH5A4dlHwGQBCtg5RF15C3No4GUhA)
 
 
 
