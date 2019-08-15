@@ -22,7 +22,6 @@ class FindWindow(QtWidgets.QDialog):
         self.setFixedSize(350, 130)
         self.setWindowTitle('Find and Replace')
         self.setWindowIcon(QtGui.QIcon('icon_pencil.png'))
-        self.setModal(True)
         self.setStyleSheet(find_window_stylesheet)
 
         self.label_find = QtWidgets.QLabel('Find:', self)
@@ -168,6 +167,10 @@ class Highlighter(QtGui.QSyntaxHighlighter):
         double_colon_format.setForeground(Qt.darkBlue)
         self.highlightingRules.append((QtCore.QRegExp('\\::[A-Za-z-]+\\b'), double_colon_format))
 
+        colon_space_format = QtGui.QTextCharFormat()
+        colon_space_format.setForeground(Qt.black)
+        self.highlightingRules.append((QtCore.QRegExp('\\: [A-Za-z-! ]+\\b'), colon_space_format))
+
         self.multiLineCommentFormat = QtGui.QTextCharFormat()
         self.multiLineCommentFormat.setForeground(Qt.gray)
 
@@ -303,6 +306,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setMinimumSize(1920, 1080)
         self.showMaximized()
         self.setWindowIcon(QtGui.QIcon('icon_pencil.png'))
+        self.setCursor(Qt.ArrowCursor)
         self.current_file = ''
 
         menubar = self.menuBar()
@@ -932,9 +936,6 @@ class MainWindow(QtWidgets.QMainWindow):
             e.ignore()
 
     def maybeSave(self):
-        if not self.text_edit.document().isModified():
-            return True
-
         editor_text = self.text_edit.toPlainText()
 
         if self.current_file != '':
@@ -1183,54 +1184,15 @@ class MainWindow(QtWidgets.QMainWindow):
             find_text = find_win.line_edit_find.text()
             replace_text = find_win.line_edit_replace.text()
 
+            current_text = self.text_edit.toPlainText()
+            replaced_text = current_text.replace(find_text, replace_text)
+
             cursor = self.text_edit.textCursor()
             cursor.beginEditBlock()
 
-            flags = QtGui.QTextDocument.FindFlags()
-
-            if cs == False and wwo == False:
-                flags = QtGui.QTextDocument.FindFlags()
-
-            elif cs == True and wwo == False:
-                flags = QtGui.QTextDocument.FindFlags() | QtGui.QTextDocument.FindCaseSensitively
-
-            elif cs == False and wwo == True:
-                flags = QtGui.QTextDocument.FindFlags() | QtGui.QTextDocument.FindWholeWords
-
-            elif cs == True and wwo == True:
-                flags = QtGui.QTextDocument.FindFlags() | QtGui.QTextDocument.FindCaseSensitively | QtGui.QTextDocument.FindWholeWords
-
-            while True:
-                r = self.text_edit.find(find_text, flags)
-                if r:
-                    temp_cursor = self.text_edit.textCursor()
-                    if temp_cursor.hasSelection():
-                        temp_cursor.insertText(replace_text)
-                else:
-                    flags2 = QtGui.QTextDocument.FindBackward
-
-                    if cs == False and wwo == False:
-                        flags2 = QtGui.QTextDocument.FindBackward
-
-                    elif cs == True and wwo == False:
-                        flags2 = QtGui.QTextDocument.FindBackward | QtGui.QTextDocument.FindCaseSensitively
-
-                    elif cs == False and wwo == True:
-                        flags2 = QtGui.QTextDocument.FindBackward | QtGui.QTextDocument.FindWholeWords
-
-                    elif cs == True and wwo == True:
-                        flags2 = QtGui.QTextDocument.FindBackward | QtGui.QTextDocument.FindCaseSensitively | QtGui.QTextDocument.FindWholeWords
-
-                    if self.text_edit.find(find_text, flags2) > 0:
-                        self.text_edit.moveCursor(QtGui.QTextCursor.Start)
-                    r2 = self.text_edit.find(find_text, flags)
-
-                    if r2:
-                        temp_cursor2 = self.text_edit.textCursor()
-                        if temp_cursor2.hasSelection():
-                            temp_cursor2.insertText(replace_text)
-                    else:
-                        break
+            cursor.select(QtGui.QTextCursor.Document)
+            cursor.removeSelectedText()
+            cursor.insertText(replaced_text)
 
             cursor.endEditBlock()
 
