@@ -94,7 +94,7 @@ class AboutWindow(QtWidgets.QDialog):
         font1 = QtGui.QFont()
         font1.setPointSize(10)
 
-        label_header = QtWidgets.QLabel('<html><b>QSS Editor++ 1.0.1</b</html>', self)
+        label_header = QtWidgets.QLabel('<html><b>QSS Editor++ 1.0.2</b</html>', self)
         label_header.setGeometry(30, 10, 200, 30)
         label_header.setFont(font1)
         label_header.show()
