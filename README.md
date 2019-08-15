@@ -4,7 +4,7 @@ A tool to edit and preview Qt style sheets
 
 ## Features
 
-#### Version 1.0.1
+#### Version 1.0.2
 
 * Preview 30+ widgets
 * Various states (enabled, disabled etc.)
@@ -56,9 +56,9 @@ Style sheet used in the second screenshot: [QtDark](https://github.com/EClaesson
 * To make changes visible either press 'Ctrl + Enter' or click on 'Apply', located in the 'View' section of the menu bar
 
 ## Download:
-#### v1.0.1
+#### v1.0.2
 
-[Download QSS Editor++](https://mega.nz/#!DO5WDIDD!1kulxw3cWbWhQjSZ3bN_2BRGwc1KZDYDy7XiDJDq3go)
+[Download QSS Editor++](https://mega.nz/#!TKAQ0CBC!Uvo1_TH_zUAUAKSH5A4dlHwGQBCtg5RF15C3No4GUhA)
 
 
 

@@ -6,7 +6,7 @@
     Fixed bug in function that checks if changes were made and whether they have been saved or not
     Changed icon size and color
 
-    Download: https://mega.nz/#!SLwigQCI!65d1V6aDaMQoJMYEHumgul-etDujMOwB-UFDbOeY0Yo
+    Download: https://mega.nz/#!TKAQ0CBC!Uvo1_TH_zUAUAKSH5A4dlHwGQBCtg5RF15C3No4GUhA
 
 
 8/12/2019
